@@ -1,0 +1,18 @@
+server:
+  port: 8761
+
+spring:
+  application:
+    name: msvc-eureka
+  #Para poner correr sin haber configurado el CONFIG SERVER (OPCIONAL)
+#  config:
+#    import: optional:configserver:http://localhost:8888
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    register-with-eureka: false #Decimos que Eureka no se registre a si mismo
+    fetch-registry: false
+    server-url:
+      defaultZone: http://localhost:${server.port}/eureka/

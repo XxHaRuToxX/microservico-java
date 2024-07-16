@@ -1,0 +1,29 @@
+#server:
+#  port: 8090
+
+spring:
+  application:
+    name: msvc-clientAndPerson
+  #    Se comenta porque ya esta la configuracion en el microservico de CONFIG -- solo se pone cuando se hacen conexiones directas entre microservicios sin usar el msvc de config
+  #  datasource:
+  #    driver-class-name: com.mysql.cj.jdbc.Driver
+  #    url: jdbc:mysql://localhost:3306/studentDb
+  #    username: xxharutoxx
+  #    password: dell@190
+  #  jpa:
+  #    hibernate:
+  #      ddl-auto: create
+  #    database: mysql
+  #    database-platform: org.hibernate.dialect.MySQL8Dialect
+  #Para poner correr sin haber configurado el CONFIG SERVER (OPCIONAL)
+  config:
+    import: optional:configserver:http://localhost:8888
+
+#Configuracion para que el mcvs de student se registre en EUREKA
+#eureka:
+#  instance:
+#    hostname: localhost
+#  client:
+#    service-url:
+#      defaultZOne: http://localhost:8761/eureka
+
